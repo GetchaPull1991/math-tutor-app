@@ -11,7 +11,7 @@
           <!-- X -->
           <div fxLayout="row" style="padding: 8px; width: 100px;">
             <div style="width: 100%; text-align: right;">
-              <span [innerHtml]="xValue"></span>
+              <span class="x-value" [innerHtml]="xValue"></span>
             </div>
           </div>
           <!-- Y -->
@@ -20,7 +20,7 @@
               +
             </div>
             <div style="width: 100%; text-align: right;">
-              <span [innerHtml]="yValue"></span>
+              <span class="y-value" [innerHtml]="yValue"></span>
             </div>
           </div>
           <!-- Answer -->
@@ -32,14 +32,14 @@
       </mat-card-content>
       <mat-card-actions fxFlex="none" style="padding-left: 16px; padding-right: 16px;">
         <div matTooltip="Please provide an answer." [matTooltipDisabled]="answer !== null">
-          <button mat-raised-button 
-                  color="primary" 
-                  (click)="checkAnswer()" 
+          <button mat-raised-button
+                  color="primary"
+                  (click)="checkAnswer()"
                   [disabled]="answer == null">
             Answer
           </button>
         </div>
       </mat-card-actions>
-    </mat-card>  
+    </mat-card>
   </div>
 </div>

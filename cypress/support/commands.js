@@ -11,4 +11,4 @@ Cypress.Commands.add('login', user => {
         window.localStorage.setItem('token', response.body.user.token)
         return {...response.body.user, ...user}
       })
-  })
+});
