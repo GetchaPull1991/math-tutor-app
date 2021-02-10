@@ -1,12 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      //Added
+      imports: [ToastrModule.forRoot()],
       declarations: [
         AppComponent
       ],
+      //Added
+      providers: [{
+        provide: ToastrService, useClass: ToastrService
+      }],
     }).compileComponents();
   });
 
@@ -28,4 +37,5 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('math-tutor-app app is running!');
   });
+
 });
